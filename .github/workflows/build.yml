@@ -26,11 +26,11 @@ jobs:
 
       # 3. 安装依赖
       - name: Install Dependencies
-        run: pnpm install
+        run: npm install
 
       # 4. 打包应用
       - name: Package Application
-        run: pnpm make # 使用 electron-forge 进行打包
+        run: npm run make # 使用 electron-forge 进行打包
 
       # 5. 发布至 GitHub Releases
       - name: Publish Release to GitHub
