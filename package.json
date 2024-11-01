@@ -37,5 +37,16 @@
   "license": "MIT",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
+  },
+  "config": {
+    "forge": {
+      "publish": [
+        {
+          "name": "github",
+          "repo": "my-app",
+          "owner": "Hxgh"
+        }
+      ]
+    }
   }
 }
