@@ -33,6 +33,6 @@ jobs:
         with:
           tag_name: latest
           name: ${{github.ref_name}}
-          files: out/make/*
+          files: ${{github.workspace}}/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
