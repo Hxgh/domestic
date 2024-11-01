@@ -42,7 +42,6 @@ jobs:
       - name: 发布至 GitHub Releases
         uses: softprops/action-gh-release@v2.0.9
         with:
-          tag_name: latest
           name: ${{github.ref_name}}
           files: out/make
         env:
