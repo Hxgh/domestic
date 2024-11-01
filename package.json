@@ -40,11 +40,24 @@
   },
   "config": {
     "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "prerelease": false
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm"
+        }
+      ],
       "publish": [
         {
           "name": "github",
-          "repo": "my-app",
-          "owner": "Hxgh"
+          "repo": "your-repo-name",
+          "owner": "your-github-username"
         }
       ]
     }
