@@ -56,8 +56,8 @@
       "publish": [
         {
           "name": "github",
-          "repo": "your-repo-name",
-          "owner": "your-github-username"
+          "repo": "domestic",
+          "owner": "Hxgh"
         }
       ]
     }
