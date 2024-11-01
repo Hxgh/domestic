@@ -37,7 +37,7 @@ jobs:
       - name: List output files
         run: ls -alh ${{ github.workspace }}
       - name: List output files
-        run: ls -alh /out/make
+        run: ls -alh
 
       - name: 发布至 GitHub Releases
         uses: softprops/action-gh-release@v2.0.9
