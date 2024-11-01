@@ -36,14 +36,14 @@ jobs:
       
       # - name: List output files
       #   run: ls -alh ${{ github.workspace }}
-      # - name: List output files
-      #   run: ls -alh out/make
+      - name: List output files
+        run: ls -alh ${{ github.workspace }}/out/make
 
       - name: 发布至 GitHub Releases
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
+          files: ${{ github.workspace }}/out/make/*
           name: ${{github.ref_name}}
-          files: /out/make/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
