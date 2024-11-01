@@ -34,10 +34,8 @@ jobs:
       - name: 打包应用
         run: npm run make
       
-      # - name: List output files
-      #   run: ls -alh ${{ github.workspace }}
-      - name: List output files
-        run: ls -alh ${{ github.workspace }}/out/make
+       - name: List all files in out/make
+        run: find ${{ github.workspace }}/out/make -type f
 
       - name: 发布至 GitHub Releases
         uses: softprops/action-gh-release@v1
