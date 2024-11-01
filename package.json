@@ -46,7 +46,8 @@
           "config": {
             "options": {
               "prerelease": false
-            }
+            },
+            "out": "out/make"
           }
         },
         {
