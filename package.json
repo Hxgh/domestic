@@ -45,7 +45,8 @@
           "name": "@electron-forge/maker-deb",
           "config": {
             "options": {
-              "prerelease": false
+              "prerelease": false,
+              "out": "out/make"
             }
           }
         },

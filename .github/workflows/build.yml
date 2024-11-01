@@ -33,3 +33,4 @@ jobs:
         with:
           tag_name: latest
           name: ${{github.ref_name}}
+          files: out/make/*
