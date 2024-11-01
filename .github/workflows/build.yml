@@ -42,6 +42,6 @@ jobs:
         with:
           tag_name: latest
           name: ${{github.ref_name}}
-          files: ${{github.workspace}}/out/make/my-app-darwin-arm64-1.0.0.zip
+          files: ${{github.workspace}}/out/make
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
