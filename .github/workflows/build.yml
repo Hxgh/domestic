@@ -16,11 +16,11 @@ jobs:
     steps:
       # 1. 检出代码
       - name: Checkout Code
-        uses: actions/checkout@v3.6.0
+        uses: actions/checkout@v3
 
       # 2. 设置最新的 Node.js LTS 版本
       - name: Set up Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3
         with:
           node-version: '22'
 
