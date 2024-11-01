@@ -9,11 +9,13 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config = {
   packagerConfig: {
     asar: true,
+    platform: 'linux',
+    arch: ['x64', 'arm64'],
   },
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({}),
-    new MakerZIP({}, ['darwin']),
+    new MakerZIP({}, ['darwin', 'linux']),
     new MakerRpm({}),
     new MakerDeb({}),
   ],
