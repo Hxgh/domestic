@@ -1,4 +1,4 @@
-name: Build and Package Electron App with Electron Forge
+name: Build, Package, and Release Electron App
 
 on:
   push:
@@ -10,22 +10,32 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        arch: [arm64]  # 要构建的目标架构，可以是 armv7l、arm64 等
-        platform: [linux]  # 可用操作系统，可以是 linux、macos-latest 等
-    
+        arch: [arm64, x64, ia32] # 需要构建的架构
+        platform: [linux] # 构建目标平台，根据需求调整
+
     steps:
+      # 1. 检出代码
       - name: Checkout Code
         uses: actions/checkout@v2
 
+      # 2. 设置 Node.js 版本
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # 推荐使用 Electron 兼容的 Node.js 版本
+          node-version: '14' # 推荐与 Electron 兼容的 Node.js 版本
 
+      # 3. 安装依赖
       - name: Install Dependencies
         run: npm install
 
+      # 4. 打包应用
       - name: Package Application
-        run: npm run package  # 使用 electron-forge 进行打包
+        run: npm run make # 使用 electron-forge 进行打包
         env:
-          DEBUG: "electron-packager"  # 启用 debug 日志，帮助诊断问题
+          DEBUG: 'electron-packager' # 启用调试日志以帮助诊断问题
+
+      # 5. 发布至 GitHub Releases
+      - name: Publish Release to GitHub
+        run: npm run publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub Actions 内置的 token 进行发布
