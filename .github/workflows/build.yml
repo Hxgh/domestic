@@ -1,0 +1,31 @@
+name: Build and Package Electron App with Electron Forge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [arm64]  # 要构建的目标架构，可以是 armv7l、arm64 等
+        platform: [linux]  # 可用操作系统，可以是 linux、macos-latest 等
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # 推荐使用 Electron 兼容的 Node.js 版本
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Package Application
+        run: npm run package  # 使用 electron-forge 进行打包
+        env:
+          DEBUG: "electron-packager"  # 启用 debug 日志，帮助诊断问题
