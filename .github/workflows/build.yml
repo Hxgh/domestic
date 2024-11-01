@@ -42,6 +42,6 @@ jobs:
         with:
           tag_name: latest
           name: ${{github.ref_name}}
-          files: ${{github.workspace}}/out/make
+          files: ${{github.workspace}}/out/make*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
