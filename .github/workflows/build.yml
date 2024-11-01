@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        arch: [arm64, x64] # 需要构建的架构
+        arch: [ia32, x64, arm64] # 需要构建的架构
         platform: [linux] # 构建目标平台，根据需求调整
 
     steps:
