@@ -5,6 +5,12 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  deployments: write
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -35,4 +41,4 @@ jobs:
           name: ${{github.ref_name}}
           files: ${{github.workspace}}/*
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
