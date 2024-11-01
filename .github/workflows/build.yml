@@ -40,10 +40,10 @@ jobs:
         run: ls -alh out/make
 
       - name: 发布至 GitHub Releases
-        uses: softprops/action-gh-release@v2.0.9
+        uses: softprops/action-gh-release@v2
         with:
-          tags: latest
+          tag_name: latest
           name: ${{github.ref_name}}
-          files: out/make/*
+          files: out/make*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
