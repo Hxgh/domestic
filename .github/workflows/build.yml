@@ -7,11 +7,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        arch: [x64, arm64] # 需要构建的架构
-        platform: [linux] # 构建目标平台，根据需求调整
+        os: [ubuntu-latest, windows-latest]
+        arch: [x64, arm64]
 
     steps:
       - name: 检出代码
@@ -33,6 +33,6 @@ jobs:
         with:
           tag_name: latest
           name: ${{github.ref_name}}
-          files: /out/*
+          files: out/make/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
