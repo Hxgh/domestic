@@ -33,8 +33,8 @@ jobs:
 
       - name: 打包应用
         run: npm run make
-      
-       - name: List all files in out/make
+
+      - name: List all files in out/make
         run: find ${{ github.workspace }}/out/make -type f
 
       - name: 发布至 GitHub Releases
