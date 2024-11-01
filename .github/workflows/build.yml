@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18' # 使用最新的 LTS 版本，推荐 18
+          node-version: '22' # 使用最新的 LTS 版本，推荐 18
 
       # 3. 安装依赖
       - name: Install Dependencies
