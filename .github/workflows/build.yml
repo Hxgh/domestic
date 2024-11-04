@@ -38,7 +38,7 @@ jobs:
         run: find ${{ github.workspace }}/out/make -type f
 
       - name: 发布至 GitHub Releases
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2.0.9
         with:
           tag_name: latest
           files: ${{ github.workspace }}/out/make/*
