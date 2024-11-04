@@ -1,4 +1,4 @@
-name: Build, Package, and Release Electron App
+name: 多平台打包
 
 on:
   push:
@@ -13,11 +13,12 @@ permissions:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         arch: [arm64, x64]
-        platform: [ubuntu, macos, windows]
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.platform }}
 
     steps:
       - name: 检出代码
@@ -38,7 +39,7 @@ jobs:
         uses: softprops/action-gh-release@v2.0.9
         with:
           tag_name: latest
-          name: ${{github.ref_name}}
+          name: ${{ github.ref_name }}
           files: ${{ github.workspace }}/out/make/**/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
