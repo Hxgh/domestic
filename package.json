@@ -47,7 +47,7 @@
             "options": {
               "prerelease": false
             },
-            "out": "out/make"
+            "out": "out/make"                                                                                                                                                                                            
           }
         },
         {
