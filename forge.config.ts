@@ -15,7 +15,7 @@ const config = {
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({}),
-    new MakerZIP({}, ['darwin', 'linux']),
+    new MakerZIP({}, ['darwin', 'linux', 'win32']),
     new MakerRpm({}),
     new MakerDeb({}),
   ],
