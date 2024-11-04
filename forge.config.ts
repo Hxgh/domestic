@@ -10,7 +10,7 @@ const config = {
   packagerConfig: {
     asar: true,
     platform: 'linux',
-    arch: ['x64', 'arm64'],
+    arch: ['arm64'],
   },
   rebuildConfig: {},
   makers: [
