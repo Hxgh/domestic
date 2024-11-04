@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         arch: [arm64, x64]
-        platform: [linux]
+        platform: [linux, macos, win32]
 
     steps:
       - name: 检出代码
@@ -34,14 +34,11 @@ jobs:
       - name: 打包应用
         run: npm run make
 
-      - name: List all files in out/make
-        run: find ${{ github.workspace }}/out/make -type f
-
       - name: 发布至 GitHub Releases
         uses: softprops/action-gh-release@v2.0.9
         with:
           tag_name: latest
-          files: ${{ github.workspace }}/out/make/**/*
           name: ${{github.ref_name}}
+          files: ${{ github.workspace }}/out/make/**/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
