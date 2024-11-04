@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         arch: [arm64, x64]
-        platform: [linux, macos, win32]
+        platform: [windows, linux, macos]
 
     steps:
       - name: 检出代码
