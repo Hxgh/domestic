@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         arch: [arm64, x64]
-        platform: [ubuntu, windows]
+        platform: [ubuntu-latest, windows-latest]
 
     runs-on: ${{ matrix.platform }}
 
