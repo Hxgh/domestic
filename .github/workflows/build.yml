@@ -41,7 +41,7 @@ jobs:
         uses: softprops/action-gh-release@v2.0.9
         with:
           tag_name: latest
-          files: ${{ github.workspace }}/out/make/*
+          files: ${{ github.workspace }}/out/make/**/*
           name: ${{github.ref_name}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
