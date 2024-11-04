@@ -14,10 +14,15 @@ const config = {
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}),
-    new MakerZIP({}, ['darwin', 'linux', 'win32']),
-    new MakerRpm({}),
-    new MakerDeb({}),
+   // 添加针对 win32 平台的 MakerSquirrel
+   new MakerSquirrel({}),
+    
+   // 将 MakerZIP 目标平台扩展到 win32
+   new MakerZIP({}, ['darwin', 'linux', 'win32']),
+   
+   // 其他平台的打包目标
+   new MakerRpm({}),
+   new MakerDeb({}),
   ],
   plugins: [
     new VitePlugin({
