@@ -14,7 +14,7 @@ const createWindow = () => {
     },
   });
 
-  mainWindow.loadURL('http://192.168.102.167:8200/');
+  mainWindow.loadURL('http://192.168.1.99:8200/');
 
   // mainWindow.webContents.openDevTools();
 };
